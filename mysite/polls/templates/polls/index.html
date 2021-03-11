@@ -1,0 +1,30 @@
+<!--
+ * @Author: martin
+ * @Date: 2021-03-03 09:43:47
+ * @LastEditTime: 2021-03-04 22:16:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /mysite/polls/templates/polls/index.html
+-->
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+    <title>Polls</title>
+    <base href="/">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% if latest_questions %}
+    <ul>
+    {% for question in latest_questions %}
+        <li><a href="/polls/{{question.id}}/">{{question.question_text}}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</body>
+</html>
+
