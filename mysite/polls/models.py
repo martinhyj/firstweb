@@ -1,7 +1,7 @@
 '''
 Author: martin
 Date: 2021-02-23 16:15:36
-LastEditTime: 2021-03-08 18:44:38
+LastEditTime: 2021-03-16 19:26:46
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: /mysite/polls/models.py
@@ -21,14 +21,24 @@ class Teacher(models.Model):
     class Meta:
         pass
         
-    APIKEY=models.CharField(max_length=30,verbose_name='APIkey',default='abcdefghijklmn')
+    # APIKEY=models.CharField(max_length=30,verbose_name='APIkey',default='abcdefghijklmn')
     # property
     teacher_name=models.CharField(max_length=10)
     teacher_age=models.IntegerField(default=0)
-    teacher_department=models.CharField(max_length=20)
-    teacher_major=models.CharField(max_length=20)
+    teacher_department=models.CharField(max_length=20,default="无")
+    teacher_major=models.CharField(max_length=20,default="无")
     teacher_sex=models.CharField(max_length=10,default="")
-    
+    teacher_college=models.CharField(max_length=20,default="无")
+    teacher_address=models.CharField(max_length=50,default="无")
+    teacher_phone=models.CharField(max_length=11,default="无")
+    teacher_salary=models.CharField(max_length=10,default="无")
+    teacher_degree=models.CharField(max_length=20,default="无")
+    teacher_hobby=models.CharField(max_length=20,default="无")
+    teacher_height=models.CharField(max_length=10,default="无")
+    teacher_weight=models.CharField(max_length=10,default="无")
+    teacher_ismarry=models.CharField(max_length=10,default="无")
+
+
 
 class Question(models.Model):
     
